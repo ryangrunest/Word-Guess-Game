@@ -1,0 +1,75 @@
+body {
+	background: url("../Images/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #F2FBEF;
+}
+.navbar {
+	color: #F2FBEF;
+}
+.container {
+	margin-top: 8%;
+}
+.jumbotron {
+	background-color: rgba(251, 239, 247, 0.0);
+	color: white;
+}
+.fadein1 {
+	animation: fadeinone 2s;
+}
+.fadein2 {
+	animation: fadeintwo 4s;
+}
+.fadein3 {
+	animation: fadeinthree 6s;
+}
+.fadein4 {
+	animation: fadeinfour 10s;
+}
+@keyframes fadeinone {
+	0% { opacity: 0; }
+	25% { opacity: 0; }
+	100% { opacity: 1.0; }
+}
+@keyframes fadeintwo {
+	0% { opacity: 0; }
+	25% { opacity: 0; }
+	100% { opacity: 1.0; }
+}
+@keyframes fadeinthree {
+	0% { opacity: 0; }
+	25% { opacity: 0; }
+	100% { opacity: 1.0; }
+}
+@keyframes fadeinfour {
+	0% { opacity: 0; }
+	25% { opacity: 0; }
+	100% { opacity: 1.0; }
+}
+.violet {
+	color: 	#E849AF;
+}
+.indigo {
+	color: #9400D3;
+}
+.blue {
+	color: #0000FF;
+}
+.green {
+	color: #00ff00;
+}
+.yellow {
+	color: #FFFF00;
+}
+.orange {
+	color: #FF7F00;
+}
+.red {
+	color: #FF0000;
+}
+.guessed-word {
+	font-size: 3rem;
+	letter-spacing: 8px;
+}

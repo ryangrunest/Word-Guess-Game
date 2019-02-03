@@ -13,24 +13,55 @@
 <body>
 	<!-- Visual Data Goes Here -->
 	<!-- NavBar -->
-	<nav class="navbar navbar-light bg-light">
-  		<span class="navbar-brand mb-0 h1">Word Guess Game</span>
+	<nav class="navbar">
+  		<span class="navbar-brand h1">Word Guess Game</span>
+  		<span>
+  			<p class="d-inline text-left mr-5">Wins: <span class="wins">0</span></p>
+  			<p class="d-inline text-right ml-5">Guesses Remaining: <span class="guesses">10</span></p>
+  		</span>
+  		
   		<span>
   			<button id="instructions" type="button" class="btn btn-dark">Instructions</button>
   			<button id="reset" type="button" class="btn btn-dark">Reset</button>
   		</span>
 	</nav>
 	<!-- End NavBar -->
+	<h1 class="text-center fadein1 mt-5">Hey There!</h1>
+	<p class="lead text-center fadein2">Come guess a word taken from the lyrics of a song I like: </p>
+	<h2 class="text-center fadein3">
+		  	<span class="violet">D</span>
+		  	<span class="indigo">a</span>
+		  	<span class="blue">v</span>
+		  	<span class="green">i</span>
+		  	<span class="yellow">d </span>
+		  	<span class="orange">B</span>
+		  	<span class="red">o</span>
+		  	<span class="violet">w</span>
+		  	<span class="indigo">i</span>
+		  	<span class="blue">e</span>
+		  	<span class="green">'</span>
+		  	<span class="yellow">s</span>
+		  	<span class="orange">S</span>
+		  	<span class="red">p</span>
+		  	<span class="violet">a</span>
+		  	<span class="indigo">c</span>
+		  	<span class="blue">e</span>
+		  	<span class="green">O</span>
+		  	<span class="yellow">d</span>
+		  	<span class="orange">d</span>
+		  	<span class="red">i</span>
+		  	<span class="violet">t</span>
+		  	<span class="indigo">y</span>
+		  </h2>
+
+
 
 	<!-- Main Content -->
-	<div class="container">
-		<div class="jumbotron mt-5 text-center">
-		  <h1 class="display-4">Hey there!</h1>
-		  <p class="lead">Come guess a word taken from the lyrics of a song I like: </p>
-		  <p>Start typing on your keyboard any guesses you may have</p>
+	<div class="container fadein4">
+		<div class="jumbotron text-center">
+		  <h3>Start typing on the keyboard any guesses you may have:</h3>
 		  <hr class="my-4">
-		  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-		  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+		  <p class="guessed-word">_ _ _ _ _ _</p>
 		</div>
 	</div>
 
