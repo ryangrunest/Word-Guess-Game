@@ -69,7 +69,7 @@ body {
 .red {
 	color: #FF0000;
 }
-.guessed-word {
+#guessed-word {
 	font-size: 3rem;
 	letter-spacing: 8px;
 }
