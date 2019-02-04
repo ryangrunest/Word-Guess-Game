@@ -14,8 +14,6 @@ var lyrics = ["ground", "control", "major", "tom", "protein", "commencing", "pla
 var rand;
 // Initialize Counter for guesses 
 var countGuesses;
-// initialize empty string to store guessed numbers
-var wordHolder;
 
 
 
@@ -28,9 +26,7 @@ function loadWord() {
 	word.innerHTML = "";
 	// loop through word and add correct amount of "_" to ui
 	for (var i = 0; i < rand.length; i++) {
-	word.innerHTML = word.innerHTML + "_";
-	// store correct number of "_" in variable to manipulate
-	wordHolder = word.innerHTML;
+	word.innerHTML += `<span id="${i}" class="blanks">_</span>`
 	};
 };
 
@@ -54,19 +50,15 @@ resetButton.addEventListener("click", function() {
 	// reload page
 	resetGame();
 });
-
 // Listener for instructions button
 instructions.addEventListener("click", function() {
 	// alert user instructions on how to play game
 	alert("write some instructions");
 });
-
-
 // main program checking keydown event
 document.onkeydown = function() {
 	// checking if the character was a-z
 	if (event.keyCode >= 65 && event.keyCode <= 90) {
-		// console.log(event.key);
 		// counting guesses
 		countGuesses--;
 		// update ui for guesses
@@ -81,18 +73,12 @@ document.onkeydown = function() {
 		for (var i = 0; i < rand.length; i++) {
 			// if key pressed is equal to any characters in picked word
 			if (event.key === rand.charAt(i)) {
-				// alert(rand.charAt(i));
-				// store key currently being pressed in variable
-				var keyPressed = event.key;
 				// negate the reduced counter, since guess was correct
 				countGuesses++;
 				// update UI for negated reduced counter
-				guesses.innerHTML = countGuesses; {
-				if (rand.charAt(i) === keyPressed) {
-					// word.textContent.replace(word.textContent.charAt(i), event.key)
-					wordHolder.indexOf(i) = keyPressed;
-					};
-				};
+				guesses.innerHTML = countGuesses;
+				// update specific span
+				document.getElementById(i).textContent = event.key;
 			};
 		};
 	};
