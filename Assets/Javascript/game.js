@@ -3,10 +3,14 @@
 var resetButton = document.querySelector("#reset");
 // Instructions Button
 var instructions = document.querySelector("#instructions");
+// new game button
+var newGame = document.querySelector("#new-game");
 // Span for guesses
 var guesses = document.querySelector("#guesses");
 // element for word being guessed
 var word = document.querySelector("#guessed-word");
+// element for updating wins
+var wins = document.querySelector("#wins");
 
 // array storing possible random words
 var lyrics = ["ground", "control", "major", "tom", "protein", "commencing", "planet",];
@@ -14,9 +18,23 @@ var lyrics = ["ground", "control", "major", "tom", "protein", "commencing", "pla
 var rand;
 // Initialize Counter for guesses 
 var countGuesses;
+// intialize wins counter
+var winsCounter = 0;
 
 
 
+var loadNewGame = function() {
+	console.log("clicked");
+	// reset number of guesses
+	countGuesses = 10;
+	// update ui with number of guesses
+	guesses.innerHTML = countGuesses;
+	// select new random word to be guessed
+	loadWord();
+}
+newGame.addEventListener("click", function() {
+	loadNewGame();
+});
 
 // VARIABLES
 // load a new word
@@ -32,12 +50,7 @@ function loadWord() {
 
 // reset game function
 var resetGame = function() {
-	// reset number of guesses
-	countGuesses = 10;
-	// update ui with number of guesses
-	guesses.innerHTML = countGuesses;
-	// select new random word to be guessed
-	loadWord();
+	location.reload();
 };
 // END VARIABLES
 
@@ -79,6 +92,12 @@ document.onkeydown = function() {
 				guesses.innerHTML = countGuesses;
 				// update specific span
 				document.getElementById(i).textContent = event.key;
+				if (word.textContent.indexOf('_') === -1) {
+					winsCounter++;
+					wins.textContent = winsCounter;
+
+					alert("congrats! Hit 'New Game' button to play again.");
+				};
 			};
 		};
 	};
@@ -87,5 +106,5 @@ document.onkeydown = function() {
 
 
 // onload
-resetGame();
+loadNewGame();
 
